@@ -1,0 +1,75 @@
+<doctype HTML!>
+<html>
+	<head>
+		<script type="text/javascript">
+		//Question 1
+			var concatenate1 = function(a,b){
+				return a +b;
+			}
+			
+			function concatenate(){
+				var string1 = "concat";
+				var string2 = "enated!!";
+				console.log(string1 + string2);
+			}
+			function concatenatecustom(){
+				var firststring = document.getElementById('firststring').value;
+				var secondstring = document.getElementById('secondstring').value;
+				
+				console.log(firststring + secondstring);
+			}
+			
+		//Question 2	(not used - absorbed in below problem)
+			function lengtherizer(arr){
+				var myArray =["pancakes", "waffles", "sausages", "yogurt", "Lattes"]
+				console.log(arr.length)
+			} 
+		
+		//Question 3
+		
+			var stock ={
+				food: ["pancakes", "waffles", "sausages", "yogurt", "Lattes"],
+			  	
+				eatFood: function(){
+					var randomfood = stock.food[Math.floor(Math.random()* stock.food.length)];
+					console.log("Remove Food: "+randomfood);
+					stock.food.pop(randomfood);
+				},
+				addfood: function(){
+					var userInput = document.getElementById('userInput').value;
+					stock.food.push(userInput);
+					return stock.food;
+				}	
+			};
+
+			function lengtherizer(){
+					console.log(stock.food.length)
+					return stock.food.length;
+				};
+	
+			</script>
+</head>
+<body>
+	<h1>JS practice</h1>
+	<input type="button" value="Press me to concatenate!" onclick="concatenate()" />
+	</br>
+	<input type='button' onclick='console.log(concatenatecustom());' value='Custom Concatenate: '/>
+	
+	<input type='text' id='firststring' value='1st string' />
+	<input type='text' id='secondstring' value='2nd string' />
+	</br></br></br>
+	
+	
+	<input type="button" value="Check Fridge" onclick="console.log(stock.food);" /></br>
+	<input type="button" value="lengtherizer!" onclick="lengtherizer()" /></br>
+	<input type="button" value="Remove Food" onclick="stock.eatFood()" />	</br>
+	<input type='button' onclick='console.log(stock.addfood());' value='ADD FOOD'/>
+	<input type='text' id='userInput' value='Add Food:' />
+	
+	
+	
+	
+</body>
+</html> 
+
+
